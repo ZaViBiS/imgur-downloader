@@ -1,0 +1,5 @@
+requests
+pysocks
+colorama
+progress
+Pillow

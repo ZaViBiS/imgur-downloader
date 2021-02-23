@@ -1,12 +1,8 @@
-'''
-default (1, 1)
-generating_strings - это функция для генирации случайной строки.
-generating_strings(количества символов в строке, 1 - уквы + цифры / 2 - только буквы)
-пример:
-print(generating_strings(5))
->>>K4ef3
-'''
 local_how = 0
+
+# -- Генирация строк -- #
+# -|- generating_strings(Количество символов в строке, 1 - это цифры и буквы, 2 - это только буквы) -|- #
+# 'dnlEMZhWqL'
 
 
 def generating_strings(size=1, what=1):
@@ -30,7 +26,6 @@ def potok(how, bar_finish):
 
     cfg.proxy_http = [line.rstrip() for line in cfg.proxy_http]
     cfg.proxy_socks = [line.rstrip() for line in cfg.proxy_socks]
-
 
     format_list = ['.jpg', '.png', '.gif', '.jpeg']
     check = True
@@ -67,7 +62,7 @@ def potok(how, bar_finish):
                 f = open('output/' + string + format_list[num_of_list], 'wb')
                 f.write(img)
                 f.close()
-                
+
                 # del f
                 # del check
                 # del img
@@ -91,13 +86,12 @@ def what_is_my_platform(ret=None):
         else:
             return 'Linux'
 
-
     elif platform == 'win32':
         if ret == 'clear':
             return 'cls'
         else:
             return 'Windows'
-        
+
     elif platform == 'darwin':
         if ret == 'clear':
             return None

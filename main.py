@@ -11,19 +11,20 @@ import time
 import os
 
 
-
 # --- Начала замера скорости выполнения --- #
 start = time.time()
 
-init() # инициализация colorama'ы
+init()  # инициализация colorama'ы
 
 # --- Сколько нужно фото --- #
-print('How many photos do I need to download:' + Style.BRIGHT + Fore.CYAN) # Жилаемое количество скачаных файлов
+print('How many photos do I need to download:' + Style.BRIGHT +
+      Fore.CYAN)  # Жилаемое количество скачаных файлов
 how = int(input())
 print(Fore.RESET)
 
 # --- Полоска готовности --- #
-bar_finish = ShadyBar(Style.BRIGHT + Fore.YELLOW + 'successfully downloaded', max=how)
+bar_finish = ShadyBar(Style.BRIGHT + Fore.YELLOW +
+                      'successfully downloaded', max=how)
 
 # --- Если proxy включены читает их из файлаов --- #
 if cfg.proxy_onner == True:
@@ -53,7 +54,7 @@ os.system(lib.what_is_my_platform('clear'))
 
 # --- Вывод информации --- #
 print(
-'''proxy:{0}
+    '''proxy:{0}
 OS:{1}
 thread:{2}'''.format(cfg.proxy_onner, lib.what_is_my_platform(), cfg.max_thread))
 
@@ -74,7 +75,8 @@ while len(threading.enumerate()) != 1:
 
 
 # --- Вывод затраченого времени --- #
-print(Fore.RESET + '\n\n[Finished in ' + Style.BRIGHT + Fore.YELLOW + str(round(time.time() - start, 2)) + Fore.RESET + 's]')
+print(Fore.RESET + '\n\n[Finished in ' + Style.BRIGHT + Fore.YELLOW +
+      str(round(time.time() - start, 2)) + Fore.RESET + 's]')
 
 
-os.abort() # Завиршение
+os.abort()  # Завиршение
