@@ -80,3 +80,16 @@ def potok(how, bar_finish):
 
         except:
             pass
+
+
+def what_is_my_platform():
+    from sys import platform
+
+    if platform == 'linux' or platform == 'linux2':
+        return 'clear'
+
+    elif platform == 'win32':
+        return 'cls'
+        
+    elif platform == 'darwin':
+        return None

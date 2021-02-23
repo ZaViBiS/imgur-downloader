@@ -13,7 +13,12 @@ import os
 # --- Начала замера скорости выполнения --- #
 start = time.time()
 
-how = int(input()) # Жилаемое количество скачаных файлов
+init() # инициализация colorama'ы
+
+# --- Сколько нужно фото --- #
+print('How many photos do I need to download:' + Style.BRIGHT + Fore.CYAN) # Жилаемое количество скачаных файлов
+how = int(input())
+print(Fore.RESET)
 
 # --- Полоска готовности --- #
 bar_finish = ShadyBar(Style.BRIGHT + Fore.YELLOW + 'successfully downloaded', max=how)
@@ -39,9 +44,8 @@ for x in os.listdir():
 if cfg.there_is != True:
     os.mkdir('output')
 
-os.system('cls')
-
-init() # инициализация colorama'ы
+# --- Очистка экрана --- #
+os.system(lib.what_is_my_platform())
 
 # --- Запуск потоков --- #
 for x in range(cfg.max_thread):
@@ -58,7 +62,8 @@ while len(threading.enumerate()) != 1:
     if lib.local_how >= how:
         break
 
-print('\n[Finished in ' + Style.BRIGHT + Fore.YELLOW + str(round(time.time() - start, 2)) + Fore.RESET + 's]')
+# --- Вывод затраченого времени --- #
+print(Fore.RESET + '\n\n[Finished in ' + Style.BRIGHT + Fore.YELLOW + str(round(time.time() - start, 2)) + Fore.RESET + 's]')
 
 
 os.abort() # Завиршение
