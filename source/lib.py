@@ -82,14 +82,24 @@ def potok(how, bar_finish):
             pass
 
 
-def what_is_my_platform():
+def what_is_my_platform(ret=None):
     from sys import platform
 
     if platform == 'linux' or platform == 'linux2':
-        return 'clear'
+        if ret == 'clear':
+            return 'clear'
+        else:
+            return 'Linux'
+
 
     elif platform == 'win32':
-        return 'cls'
+        if ret == 'clear':
+            return 'cls'
+        else:
+            return 'Windows'
         
     elif platform == 'darwin':
-        return None
+        if ret == 'clear':
+            return None
+        else:
+            return 'MacOS'

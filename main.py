@@ -10,6 +10,8 @@ import threading
 import time
 import os
 
+
+
 # --- Начала замера скорости выполнения --- #
 start = time.time()
 
@@ -40,12 +42,20 @@ for x in os.listdir():
     if x == 'output':
         cfg.there_is = True
 
+
 # --- Создание выходной дериктории ( Если её нет ) --- #
 if cfg.there_is != True:
     os.mkdir('output')
 
 # --- Очистка экрана --- #
-os.system(lib.what_is_my_platform())
+os.system(lib.what_is_my_platform('clear'))
+
+
+# --- Вывод информации --- #
+print(
+'''proxy:{0}
+OS:{1}
+thread:{2}'''.format(cfg.proxy_onner, lib.what_is_my_platform(), cfg.max_thread))
 
 # --- Запуск потоков --- #
 for x in range(cfg.max_thread):
@@ -61,6 +71,7 @@ while len(threading.enumerate()) != 1:
 
     if lib.local_how >= how:
         break
+
 
 # --- Вывод затраченого времени --- #
 print(Fore.RESET + '\n\n[Finished in ' + Style.BRIGHT + Fore.YELLOW + str(round(time.time() - start, 2)) + Fore.RESET + 's]')
