@@ -27,7 +27,7 @@ def potok(how, bar_finish):
     cfg.proxy_http = [line.rstrip() for line in cfg.proxy_http]
     cfg.proxy_socks = [line.rstrip() for line in cfg.proxy_socks]
 
-    format_list = ['.jpg', '.png', '.gif', '.jpeg']
+    format_list = ['.jpg', '.png', '.jpeg']
     check = True
 
     if local_how >= how:
@@ -47,7 +47,7 @@ def potok(how, bar_finish):
                 proxy = None
 
             string = generating_strings(6, 1)
-            num_of_list = randint(0, 3)
+            num_of_list = randint(0, 2)
             url = 'http://i.imgur.com/' + string + format_list[num_of_list]
             img = requests.get(url, proxies=proxy, timeout=5).content
 
