@@ -1,7 +1,7 @@
-# Installation
+# installation
 pip install -r requirements.txt
 
-# Using
+# using
 ```console
 py main.py
 How many photos do I need to download:
@@ -24,3 +24,18 @@ successfully downloaded |░                               | 12/1000
 * colorama
 * progress
 * Pillow
+
+
+# customization
+```python3
+# --- Можно настраевать --- #
+max_thread = 100 # количествор потоков работы
+proxy_onner = True # True - использовать proxy ( Нужен файл со списком proxy ) | False - Не использовать
+
+
+# --- Переменные --- #
+there_is = False
+proxy_http = []
+proxy_socks = []
+
+```
